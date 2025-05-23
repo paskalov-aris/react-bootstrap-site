@@ -1,3 +1,9 @@
+import { CarouselBoxHk } from "../components/CarouselBoxHk";
+
 export const Home = () => {
-  return <div>Home</div>;
+  return (
+    <div>
+      <CarouselBoxHk />
+    </div>
+  );
 };
