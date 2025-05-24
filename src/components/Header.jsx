@@ -13,11 +13,9 @@ import { Home } from "../pages/Home";
 import { About } from "../pages/About";
 import { Contacts } from "../pages/Contacts";
 import { Blog } from "../pages/Blog";
+import { EMAIL_REGEXP } from "../constants/regexp";
 
 import logo from "../assets/react.svg";
-
-const EMAIL_REGEXP =
-  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 export const Header = () => {
   const [loginModalVisible, setLoginModalVisible] = useState(false);
