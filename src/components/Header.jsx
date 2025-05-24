@@ -17,6 +17,7 @@ import { AboutTeam } from "../pages/AboutTeam";
 import { EMAIL_REGEXP } from "../constants/regexp";
 
 import logo from "../assets/react.svg";
+import { BlogPost } from "../pages/BlogPost";
 
 export const Header = () => {
   const [loginModalVisible, setLoginModalVisible] = useState(false);
@@ -156,6 +157,7 @@ export const Header = () => {
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/about-team/:teamId" element={<AboutTeam />} />
+          <Route path="/blog/:postId" element={<BlogPost />} />
         </Routes>
       </Router>
     </>

@@ -1,83 +1,31 @@
 import { Card, Col, ListGroup, Row } from "react-bootstrap";
+import { BLOG_POSTS } from "../constants/mockData";
+import { BlogPostCard } from "../components/BlogPostCard";
 
 export const Blog = () => {
   return (
     <Row>
       <Col md="6">
-        <div className="d-flex align-items-center me-5">
-          <div className="flex-shrink-0">
-            <img
-              width={150}
-              height={150}
-              className="mr-3"
-              src="https://emgotas.files.wordpress.com/2016/11/what-is-a-team.jpg"
-              alt="photo"
-            />
-          </div>
-          <div className="flex-grow-1 ms-3">
-            <h5>Blog post</h5>
-            <p>Lorem</p>
-          </div>
-        </div>
-
-        <div className="d-flex align-items-center me-5">
-          <div className="flex-shrink-0">
-            <img
-              width={150}
-              height={150}
-              className="mr-3"
-              src="https://emgotas.files.wordpress.com/2016/11/what-is-a-team.jpg"
-              alt="photo"
-            />
-          </div>
-          <div className="flex-grow-1 ms-3">
-            <h5>Blog post</h5>
-            <p>Lorem</p>
-          </div>
-        </div>
-
-        <div className="d-flex align-items-center me-5">
-          <div className="flex-shrink-0">
-            <img
-              width={150}
-              height={150}
-              className="mr-3"
-              src="https://emgotas.files.wordpress.com/2016/11/what-is-a-team.jpg"
-              alt="photo"
-            />
-          </div>
-          <div className="flex-grow-1 ms-3">
-            <h5>Blog post</h5>
-            <p>Lorem</p>
-          </div>
-        </div>
-
-        <div className="d-flex align-items-center me-5">
-          <div className="flex-shrink-0">
-            <img
-              width={150}
-              height={150}
-              className="mr-3"
-              src="https://emgotas.files.wordpress.com/2016/11/what-is-a-team.jpg"
-              alt="photo"
-            />
-          </div>
-          <div className="flex-grow-1 ms-3">
-            <h5>Blog post</h5>
-            <p>Lorem</p>
-          </div>
-        </div>
+        {BLOG_POSTS.map((post) => (
+          <BlogPostCard
+            key={post.id}
+            id={post.id}
+            coverUrl={post.coverUrl}
+            title={post.title}
+            text={post.text}
+          />
+        ))}
       </Col>
       <Col md="6">
         <h5 className="text-center mt-5">Категорії</h5>
 
         <Card>
           <ListGroup variant="flush">
-            <ListGroup.Item>категорія 1</ListGroup.Item>
-            <ListGroup.Item>категорія 2</ListGroup.Item>
-            <ListGroup.Item>категорія 3</ListGroup.Item>
-            <ListGroup.Item>категорія 4</ListGroup.Item>
-            <ListGroup.Item>категорія 5</ListGroup.Item>
+            <ListGroup.Item>Штучний інтелект</ListGroup.Item>
+            <ListGroup.Item>Наукові дослідження</ListGroup.Item>
+            <ListGroup.Item>Освітні технології</ListGroup.Item>
+            <ListGroup.Item>Академічна співпраця</ListGroup.Item>
+            <ListGroup.Item>Інновації в науці</ListGroup.Item>
           </ListGroup>
         </Card>
 

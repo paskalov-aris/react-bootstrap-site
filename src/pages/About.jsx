@@ -29,7 +29,9 @@ export const About = () => {
               <Tab.Pane eventKey="first">
                 <img
                   src="https://i.pinimg.com/originals/aa/f0/69/aaf069dc6de7618a63de784b70ad4370.jpg"
-                  className="d-block w-100"
+                  className="d-block"
+                  width={500}
+                  height={400}
                   alt="picture one"
                 />
                 <p>Lorem</p>
@@ -39,6 +41,8 @@ export const About = () => {
                   className="d-block w-100"
                   src="https://images01.nicepagecdn.com/page/10/91/website-design-preview-109156.jpg"
                   alt="picture two"
+                  width={500}
+                  height={400}
                 />
                 <p>Lorem</p>
               </Tab.Pane>
@@ -47,6 +51,8 @@ export const About = () => {
                   className="d-block w-100"
                   src="https://s3-alpha.figma.com/hub/file/858291939/14dda654-9bf1-47a5-ba66-904aa3003c6e-cover.png"
                   alt="picture three"
+                  width={500}
+                  height={400}
                 />
                 <p>Lorem</p>
               </Tab.Pane>
@@ -55,6 +61,8 @@ export const About = () => {
                   className="d-block w-100"
                   src="https://ichef.bbci.co.uk/news/999/cpsprodpb/15951/production/_117310488_16.jpg"
                   alt="picture fourth"
+                  width={500}
+                  height={400}
                 />
                 <p>Lorem</p>
               </Tab.Pane>
@@ -63,6 +71,8 @@ export const About = () => {
                   className="d-block w-100"
                   src="https://programminglibrarian.org/sites/default/files/partnerships_2.jpg"
                   alt="picture fifth"
+                  width={500}
+                  height={400}
                 />
                 <p>Lorem</p>
               </Tab.Pane>
