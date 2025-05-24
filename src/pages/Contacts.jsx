@@ -4,11 +4,11 @@ import { EMAIL_REGEXP } from "../constants/regexp";
 
 export const Contacts = () => {
   const [email, setEmail] = useState("");
-  const [text, setText] = useState("");
+  const [review, setReview] = useState("");
   const [emailDirty, setEmailDirty] = useState(false);
-  const [textDirty, setTextDirty] = useState(false);
+  const [reviewDirty, setReviewDirty] = useState(false);
   const [emailError, setEmailError] = useState("");
-  const [textError, setTextError] = useState("");
+  const [reviewError, setReviewError] = useState("");
   const [formValid, setFormValid] = useState(false);
 
   const blurHandler = (e) => {
@@ -16,8 +16,8 @@ export const Contacts = () => {
       case "email":
         setEmailDirty(true);
         break;
-      case "text":
-        setTextDirty(true);
+      case "review":
+        setReviewDirty(true);
         break;
     }
   };
@@ -32,25 +32,25 @@ export const Contacts = () => {
     }
   };
 
-  const textHandler = (e) => {
-    setText(e.target.value);
+  const reviewHandler = (e) => {
+    setReview(e.target.value);
     if (e.target.value.length < 20) {
-      setTextError("Ваше звернення повинне мати не менше 20 символів");
+      setReviewError("Ваше звернення повинне мати не менше 20 символів");
       if (!e.target.value) {
-        setTextError("Текст не може бути порожнім");
+        setReviewError("Текст не може бути порожнім");
       }
     } else {
-      setTextError("");
+      setReviewError("");
     }
   };
 
   useEffect(() => {
-    if (emailError || textError) {
+    if (emailError || reviewError) {
       setFormValid(false);
-    } else if (email.length > 0 && text.length > 20) {
+    } else if (email.length > 0 && review.length > 20) {
       setFormValid(true);
     }
-  }, [emailError, textError, email, text]);
+  }, [emailError, reviewError, email, review]);
 
   return (
     <Container>
@@ -83,17 +83,17 @@ export const Contacts = () => {
               controlId="basicText"
               className="d-flex flex-column w-100 align-items-start"
             >
-              <Form.Label>Example Textarea</Form.Label>
-              {textDirty && textError && (
-                <div style={{ color: "red" }}>{textError}</div>
+              <Form.Label>Відгук</Form.Label>
+              {reviewDirty && reviewError && (
+                <div style={{ color: "red" }}>{reviewError}</div>
               )}
               <Form.Control
                 as="textarea"
                 rows={5}
-                name="text"
-                placeholder="Enter text"
-                value={text}
-                onChange={(e) => textHandler(e)}
+                name="review"
+                placeholder="Enter your review"
+                value={review}
+                onChange={(e) => reviewHandler(e)}
                 onBlur={(e) => blurHandler(e)}
                 className="mb-2 w-100"
               />
